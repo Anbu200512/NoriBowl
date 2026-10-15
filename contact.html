@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<title>Contact &amp; Order Enquiry | NoriBowl Ramen &amp; Noodle House</title>
+<meta name="description" content="Find NoriBowl on Harbour Road — address, phone, email and opening hours. Send an order or table enquiry and we will confirm within hours.">
+<script>
+(function(){try{
+var t=localStorage.getItem('noribowl_theme');
+if(t!=='dark'&&t!=='light'){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+if(t==='dark'){document.documentElement.classList.add('dark');}
+var d=localStorage.getItem('noribowl_direction');
+if(d==='rtl'||d==='ltr'){document.documentElement.setAttribute('dir',d);}
+}catch(e){}})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        cream: '#FBF7F1', sand: '#F3E9DA', line: '#E7DCC8',
+        clay: '#B4602A', clayd: '#95491D', ember: '#8E3120',
+        gold: '#D6A054', ink: '#221812', night: '#17110D', nightc: '#221A14',
+        nori: '#2C4536'
+      },
+      fontFamily: {
+        display: ['Fraunces', 'Georgia', 'serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif']
+      },
+      boxShadow: {
+        soft: '0 24px 50px -24px rgba(34,24,18,.45)',
+        card: '0 12px 30px -16px rgba(34,24,18,.25)'
+      }
+    }
+  }
+};
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; }
+  .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.is-in { opacity: 1; transform: none; }
+  .map-grid {
+    background-color: #EDE3D2;
+    background-image:
+      linear-gradient(rgba(180,96,42,.18) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(180,96,42,.18) 1px, transparent 1px),
+      linear-gradient(rgba(180,96,42,.09) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(180,96,42,.09) 1px, transparent 1px);
+    background-size: 96px 96px, 96px 96px, 32px 32px, 32px 32px;
+  }
+  .dark .map-grid { background-color: #241C16; }
+  :where(a, button, input, select, textarea):focus-visible { outline: 2px solid #B4602A; outline-offset: 2px; border-radius: 999px; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+</style>
+</head>
+<body class="min-h-screen bg-cream font-sans text-stone-600 dark:bg-night dark:text-stone-400">
+
+<!-- ============ NAVBAR ============ -->
+<header class="sticky top-0 z-50 border-b border-line bg-cream/95 backdrop-blur dark:border-white/10 dark:bg-night/95">
+  <nav class="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
+    <a href="index.html" class="flex shrink-0 items-center gap-2.5" aria-label="NoriBowl home">
+      <span class="grid h-10 w-10 place-items-center rounded-2xl bg-clay text-white shadow-soft"><i data-lucide="soup" class="h-5 w-5"></i></span>
+      <span class="leading-none">
+        <span class="block font-display text-xl font-bold tracking-tight text-ink dark:text-cream">NoriBowl</span>
+      </span>
+    </a>
+
+    <div class="hidden items-center gap-1 lg:flex">
+      <div class="relative" data-dropdown>
+        <button id="homeMenuBtn" type="button" aria-expanded="false" aria-haspopup="true" class="inline-flex items-center gap-1 rounded-full px-3 py-2 text-sm font-semibold text-stone-600 transition hover:bg-sand hover:text-ink dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-cream">
+          Home <i data-lucide="chevron-down" class="h-4 w-4"></i>
+        </button>
+        <div id="homeMenuPanel" class="absolute start-0 top-full z-50 mt-2 hidden w-52 rounded-2xl border border-line bg-white p-2 shadow-soft dark:border-white/10 dark:bg-nightc">
+          <a href="index.html" class="flex items-center gap-2 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 transition hover:bg-sand hover:text-ink dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-cream"><i data-lucide="home" class="h-4 w-4"></i>Home 1</a>
+          <a href="home2.html" class="mt-1 flex items-center gap-2 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 transition hover:bg-sand hover:text-ink dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-cream"><i data-lucide="layout-grid" class="h-4 w-4"></i>Home 2</a>
+        </div>
+      </div>
+      <a href="story.html" class="rounded-full px-3 py-2 text-sm font-semibold text-stone-600 transition hover:bg-sand hover:text-ink dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-cream">Our Story</a>
+      <a href="menu.html" class="rounded-full px-3 py-2 text-sm font-semibold text-stone-600 transition hover:bg-sand hover:text-ink dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-cream">Menu</a>
+      <a href="gallery.html" class="rounded-full px-3 py-2 text-sm font-semibold text-stone-600 transition hover:bg-sand hover:text-ink dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-cream">Gallery</a>
+      <a href="catering.html" class="rounded-full px-3 py-2 text-sm font-semibold text-stone-600 transition hover:bg-sand hover:text-ink dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-cream">Catering</a>
+      <a href="contact.html" aria-current="page" class="rounded-full px-3 py-2 text-sm font-bold text-clay transition hover:bg-sand dark:text-gold dark:hover:bg-white/10">Contact</a>
+    </div>
+
+    <div class="flex items-center gap-2">
+      <button data-dir-toggle type="button" aria-label="Switch to right-to-left layout" title="RTL" class="hidden h-9 w-9 place-items-center rounded-full border border-line bg-white text-ink transition hover:border-clay hover:text-clay dark:border-white/10 dark:bg-nightc dark:text-cream dark:hover:text-gold lg:grid lg:h-10 lg:w-10">
+        <i data-lucide="arrow-left-right" class="h-4 w-4"></i>
+      </button>
+      <button data-theme-toggle type="button" aria-label="Switch to dark theme" title="Dark mode" class="hidden h-9 w-9 place-items-center rounded-full border border-line bg-white text-ink transition hover:border-clay hover:text-clay dark:border-white/10 dark:bg-nightc dark:text-cream dark:hover:text-gold lg:grid lg:h-10 lg:w-10">
+        <i data-lucide="sun" class="hidden h-4 w-4 dark:block"></i>
+        <i data-lucide="moon" class="h-4 w-4 dark:hidden"></i>
+      </button>
+      <a href="contact.html#enquiry" class="relative hidden items-center gap-2 rounded-full bg-clay px-5 py-2.5 text-sm font-bold text-white shadow-soft transition hover:bg-clayd lg:inline-flex">
+        Order Enquiry
+        <span data-enq-badge class="hidden min-w-5 rounded-full bg-white px-1.5 py-0.5 text-center text-[10px] font-bold text-ember">0</span>
+      </a>
+      <button id="navToggle" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Toggle navigation menu" class="grid h-9 w-9 sm:h-10 sm:w-10 place-items-center rounded-full border border-line bg-white text-ink transition dark:border-white/10 dark:bg-nightc dark:text-cream lg:hidden">
+        <i data-lucide="menu" class="h-5 w-5"></i>
+      </button>
+    </div>
+  </nav>
+
+  <div id="mobileMenu" class="hidden border-t border-line bg-cream dark:border-white/10 dark:bg-night lg:hidden">
+    <div class="mx-auto max-w-7xl space-y-1 px-4 py-4 sm:px-6">
+      <div>
+        <button id="mobileHomeBtn" type="button" aria-expanded="false" aria-controls="mobileHomePanel" class="flex w-full items-center justify-between rounded-xl px-4 py-3 text-base font-semibold text-ink dark:text-cream">
+          <span class="flex items-center gap-2"><i data-lucide="home" class="h-4 w-4 text-clay dark:text-gold"></i>Home</span>
+          <i data-chevron data-lucide="chevron-down" class="h-4 w-4 transition-transform"></i>
+        </button>
+        <div id="mobileHomePanel" class="ms-4 mt-1 hidden space-y-1 border-s-2 border-line ps-4 dark:border-white/10">
+          <a href="index.html" class="block rounded-lg px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300">Home 1</a>
+          <a href="home2.html" class="block rounded-lg px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300">Home 2</a>
+        </div>
+      </div>
+      <a href="story.html" class="block rounded-xl px-4 py-3 text-base font-semibold text-ink dark:text-cream">Our Story</a>
+      <a href="menu.html" class="block rounded-xl px-4 py-3 text-base font-semibold text-ink dark:text-cream">Menu</a>
+      <a href="gallery.html" class="block rounded-xl px-4 py-3 text-base font-semibold text-ink dark:text-cream">Gallery</a>
+      <a href="catering.html" class="block rounded-xl px-4 py-3 text-base font-semibold text-ink dark:text-cream">Catering</a>
+      <a href="contact.html" aria-current="page" class="block rounded-xl px-4 py-3 text-base font-bold text-clay dark:text-gold">Contact</a>
+      <div class="mt-2 flex items-center justify-center gap-2">
+        <button data-dir-toggle type="button" aria-label="Switch to right-to-left layout" title="RTL" class="grid h-10 w-10 place-items-center rounded-full border border-line bg-white text-ink transition hover:border-clay hover:text-clay dark:border-white/10 dark:bg-nightc dark:text-cream dark:hover:text-gold">
+          <i data-lucide="arrow-left-right" class="h-4 w-4"></i>
+        </button>
+        <button data-theme-toggle type="button" aria-label="Switch to dark theme" title="Dark mode" class="grid h-10 w-10 place-items-center rounded-full border border-line bg-white text-ink transition hover:border-clay hover:text-clay dark:border-white/10 dark:bg-nightc dark:text-cream dark:hover:text-gold">
+          <i data-lucide="sun" class="hidden h-4 w-4 dark:block"></i>
+          <i data-lucide="moon" class="h-4 w-4 dark:hidden"></i>
+        </button>
+      </div>
+      <a href="#enquiry" class="mt-2 flex items-center justify-center gap-2 rounded-full bg-clay px-5 py-3 text-sm font-bold text-white shadow-soft hover:bg-clayd">
+        Order Enquiry <i data-lucide="arrow-right" class="h-4 w-4 rtl:rotate-180"></i>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ============ PAGE HERO ============ -->
+<section class="relative isolate overflow-hidden">
+  <img src="assets/images/contact-venue.jpg" alt="The NoriBowl dining room before service" class="absolute inset-0 -z-10 h-full w-full object-cover">
+  <div class="absolute inset-0 -z-10 bg-ink/85"></div>
+  <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16">
+    <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs font-semibold text-stone-400">
+      <a href="index.html" class="transition hover:text-gold">Home</a>
+      <i data-lucide="chevron-right" class="h-3.5 w-3.5 rtl:rotate-180"></i>
+      <span class="text-gold">Contact</span>
+    </nav>
+    <h1 class="mt-4 max-w-3xl font-display text-3xl font-bold leading-tight break-words text-cream sm:text-4xl lg:text-5xl">Say hello, book a table, send an enquiry</h1>
+
+    <div class="mt-6 flex flex-wrap items-center gap-3" data-reveal>
+      <span class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-stone-200 backdrop-blur"><i data-lucide="clock" class="h-3.5 w-3.5 text-gold"></i> Open today until 21:30</span>
+      <span class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-stone-200 backdrop-blur"><i data-lucide="map-pin" class="h-3.5 w-3.5 text-gold"></i> 128 Harbour Road</span>
+      <span class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-stone-200 backdrop-blur"><i data-lucide="mail" class="h-3.5 w-3.5 text-gold"></i> hello@noribowl.com</span>
+    </div>
+
+    <p class="mt-6 max-w-2xl border-s-2 border-gold/60 ps-4 text-sm italic leading-relaxed text-stone-300 sm:text-base">“We answer every enquiry the same day — usually within two hours during opening times.”</p>
+
+    <div class="mt-6 flex flex-wrap gap-3" data-reveal>
+      <a href="#enquiry" class="group inline-flex items-center gap-2 rounded-full bg-clay px-6 py-3 text-sm font-bold text-white shadow-soft transition hover:bg-clayd">
+        Send an enquiry <i data-lucide="arrow-right" class="h-4 w-4 transition group-hover:translate-x-0.5 rtl:rotate-180 rtl:group-hover:-translate-x-0.5"></i>
+      </a>
+      <a href="tel:+61391234578" class="inline-flex items-center gap-2 rounded-full border border-cream/40 px-6 py-3 text-sm font-bold text-cream backdrop-blur transition hover:bg-cream hover:text-ink">
+        Call (03) 9123 4578 <i data-lucide="phone" class="h-4 w-4"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INFO + MAP + FORM ============ -->
+<section id="enquiry" class="py-14 sm:py-20">
+  <div class="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[1fr_1.3fr]">
+
+    <!-- left column -->
+    <div class="space-y-6">
+      <div class="rounded-[2rem] border border-line bg-white p-7 shadow-card dark:border-white/10 dark:bg-nightc" data-reveal>
+        <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-clay dark:text-gold">Find Us</p>
+        <h2 class="mt-3 font-display text-2xl font-bold text-ink dark:text-cream">128 Harbour Road</h2>
+        <address class="mt-2 not-italic text-sm leading-relaxed text-stone-600 dark:text-stone-400">
+          Southside, Melbourne VIC 3000<br>Australia
+        </address>
+        <ul class="mt-6 space-y-3 text-sm">
+          <li>
+            <a href="tel:+61391234578" class="flex items-center gap-3 rounded-2xl bg-sand px-4 py-3 font-semibold text-ink transition hover:bg-clay hover:text-white dark:bg-white/5 dark:text-cream">
+              <i data-lucide="phone" class="h-4 w-4 shrink-0"></i> (03) 9123 4578
+            </a>
+          </li>
+          <li>
+            <a href="mailto:hello@noribowl.com" class="flex items-center gap-3 rounded-2xl bg-sand px-4 py-3 font-semibold text-ink transition hover:bg-clay hover:text-white dark:bg-white/5 dark:text-cream">
+              <i data-lucide="mail" class="h-4 w-4 shrink-0"></i> hello@noribowl.com
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="rounded-[2rem] border border-line bg-white p-7 shadow-card dark:border-white/10 dark:bg-nightc" data-reveal>
+        <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-clay dark:text-gold">Opening Hours</p>
+        <dl class="mt-4 divide-y divide-line text-sm dark:divide-white/10">
+          <div class="flex items-center justify-between py-2.5"><dt class="font-semibold text-ink dark:text-cream">Monday – Thursday</dt><dd class="font-medium">11:30 – 21:30</dd></div>
+          <div class="flex items-center justify-between py-2.5"><dt class="font-semibold text-ink dark:text-cream">Friday – Saturday</dt><dd class="font-medium">11:30 – 22:30</dd></div>
+          <div class="flex items-center justify-between py-2.5"><dt class="font-semibold text-ink dark:text-cream">Sunday</dt><dd class="font-medium">12:00 – 21:00</dd></div>
+          <div class="flex items-center justify-between py-2.5"><dt class="font-semibold text-ink dark:text-cream">Kitchen last orders</dt><dd class="font-medium">45 min before close</dd></div>
+        </dl>
+      </div>
+
+      <div class="overflow-hidden rounded-[2rem] border border-line bg-white shadow-card dark:border-white/10 dark:bg-nightc" data-reveal>
+        <iframe title="Map showing NoriBowl at 128 Harbour Road" src="https://www.google.com/maps?q=128%20Harbour%20Road%2C%20Melbourne%20VIC%203000%2C%20Australia&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="aspect-[4/3] w-full border-0" allowfullscreen></iframe>
+        <div class="p-5">
+          <p class="text-sm leading-relaxed text-stone-600 dark:text-stone-400">Two minutes from the tram stop at Harbour Road &amp; Vine Street. Enter through the timber doorway under the red lantern.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- form column -->
+    <div class="rounded-[2rem] border border-line bg-white p-7 shadow-card dark:border-white/10 dark:bg-nightc sm:p-9" data-reveal>
+      <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-clay dark:text-gold">Order Enquiry</p>
+      <h2 class="mt-3 font-display text-2xl font-bold text-ink dark:text-cream sm:text-3xl">Tell us what you need</h2>
+      <p class="mt-2 text-sm leading-relaxed text-stone-600 dark:text-stone-400">Fields marked with * are required. We confirm by phone or email the same day.</p>
+
+      <!-- selected dishes from menu -->
+      <div class="mt-6 rounded-2xl border border-dashed border-line bg-sand/60 p-4 dark:border-white/15 dark:bg-white/5">
+        <p class="text-[11px] font-bold uppercase tracking-[0.18em] text-ink dark:text-cream">Bowls from the menu</p>
+        <div id="enquiryItems" class="mt-3"></div>
+      </div>
+
+      <form id="enquiryForm" novalidate class="mt-7 grid gap-5 sm:grid-cols-2 [&>*]:min-w-0">
+        <div>
+          <label for="fName" class="mb-1.5 block text-sm font-semibold text-ink dark:text-cream">Customer Name *</label>
+          <input id="fName" name="name" type="text" autocomplete="name" placeholder="Your full name" class="w-full rounded-xl border border-line bg-cream px-4 py-3 text-sm text-ink placeholder:text-stone-400 transition focus:border-clay focus:outline-none focus:ring-4 focus:ring-clay/15 dark:border-white/10 dark:bg-night dark:text-cream">
+          <p data-error-for="name" class="mt-1.5 hidden text-xs font-semibold text-red-600 dark:text-red-400" role="alert"></p>
+        </div>
+        <div>
+          <label for="fPhone" class="mb-1.5 block text-sm font-semibold text-ink dark:text-cream">Phone *</label>
+          <input id="fPhone" name="phone" type="tel" autocomplete="tel" placeholder="+61 4xx xxx xxx" class="w-full rounded-xl border border-line bg-cream px-4 py-3 text-sm text-ink placeholder:text-stone-400 transition focus:border-clay focus:outline-none focus:ring-4 focus:ring-clay/15 dark:border-white/10 dark:bg-night dark:text-cream">
+          <p data-error-for="phone" class="mt-1.5 hidden text-xs font-semibold text-red-600 dark:text-red-400" role="alert"></p>
+        </div>
+        <div class="sm:col-span-2">
+          <label for="fEmail" class="mb-1.5 block text-sm font-semibold text-ink dark:text-cream">Email *</label>
+          <input id="fEmail" name="email" type="email" autocomplete="email" placeholder="you@example.com" class="w-full rounded-xl border border-line bg-cream px-4 py-3 text-sm text-ink placeholder:text-stone-400 transition focus:border-clay focus:outline-none focus:ring-4 focus:ring-clay/15 dark:border-white/10 dark:bg-night dark:text-cream">
+          <p data-error-for="email" class="mt-1.5 hidden text-xs font-semibold text-red-600 dark:text-red-400" role="alert"></p>
+        </div>
+        <div>
+          <label for="fDate" class="mb-1.5 block text-sm font-semibold text-ink dark:text-cream">Preferred Date *</label>
+          <input id="fDate" name="date" type="date" class="w-full rounded-xl border border-line bg-cream px-4 py-3 text-sm text-ink transition focus:border-clay focus:outline-none focus:ring-4 focus:ring-clay/15 dark:border-white/10 dark:bg-night dark:text-cream">
+          <p data-error-for="date" class="mt-1.5 hidden text-xs font-semibold text-red-600 dark:text-red-400" role="alert"></p>
+        </div>
+        <div>
+          <label for="fTime" class="mb-1.5 block text-sm font-semibold text-ink dark:text-cream">Preferred Time *</label>
+          <select id="fTime" name="time" class="w-full rounded-xl border border-line bg-cream px-4 py-3 text-sm text-ink transition focus:border-clay focus:outline-none focus:ring-4 focus:ring-clay/15 dark:border-white/10 dark:bg-night dark:text-cream">
+            <option value="">Select a time</option>
+            <option>11:30</option><option>12:00</option><option>12:30</option><option>13:00</option>
+            <option>13:30</option><option>17:30</option><option>18:00</option><option>18:30</option>
+            <option>19:00</option><option>19:30</option><option>20:00</option><option>20:30</option>
+          </select>
+          <p data-error-for="time" class="mt-1.5 hidden text-xs font-semibold text-red-600 dark:text-red-400" role="alert"></p>
+        </div>
+        <div>
+          <label for="fPeople" class="mb-1.5 block text-sm font-semibold text-ink dark:text-cream">Number of People *</label>
+          <select id="fPeople" name="people" class="w-full rounded-xl border border-line bg-cream px-4 py-3 text-sm text-ink transition focus:border-clay focus:outline-none focus:ring-4 focus:ring-clay/15 dark:border-white/10 dark:bg-night dark:text-cream">
+            <option value="">Select party size</option>
+            <option value="1">1 person</option><option value="2">2 people</option><option value="3">3 people</option>
+            <option value="4">4 people</option><option value="5">5 people</option><option value="6">6 people</option>
+            <option value="8">7–8 people</option><option value="10">9–10 people</option><option value="12">More than 10</option>
+          </select>
+          <p data-error-for="people" class="mt-1.5 hidden text-xs font-semibold text-red-600 dark:text-red-400" role="alert"></p>
+        </div>
+        <div>
+          <label for="fRamen" class="mb-1.5 block text-sm font-semibold text-ink dark:text-cream">Preferred Ramen</label>
+          <select id="fRamen" name="ramen" class="w-full rounded-xl border border-line bg-cream px-4 py-3 text-sm text-ink transition focus:border-clay focus:outline-none focus:ring-4 focus:ring-clay/15 dark:border-white/10 dark:bg-night dark:text-cream">
+          </select>
+          <p data-error-for="ramen" class="mt-1.5 hidden text-xs font-semibold text-red-600 dark:text-red-400" role="alert"></p>
+        </div>
+        <div class="sm:col-span-2">
+          <label for="fRequest" class="mb-1.5 block text-sm font-semibold text-ink dark:text-cream">Special Request</label>
+          <textarea id="fRequest" name="request" rows="4" placeholder="Allergies, high chair, birthday candle, takeaway order notes…" class="w-full resize-y rounded-xl border border-line bg-cream px-4 py-3 text-sm text-ink placeholder:text-stone-400 transition focus:border-clay focus:outline-none focus:ring-4 focus:ring-clay/15 dark:border-white/10 dark:bg-night dark:text-cream"></textarea>
+        </div>
+        <div class="sm:col-span-2 flex flex-col gap-4 border-t border-line pt-5 dark:border-white/10 sm:flex-row sm:items-center sm:justify-between">
+          <p class="text-xs leading-relaxed text-stone-500 dark:text-stone-400">Your enquiry is saved on this device only — no data leaves your browser.</p>
+          <button type="submit" class="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-clay px-7 py-3.5 text-sm font-bold text-white shadow-soft transition hover:bg-clayd">
+            Submit Enquiry <i data-lucide="send" class="h-4 w-4"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="pb-16 sm:pb-20">
+  <div class="mx-auto max-w-3xl px-4 sm:px-6">
+    <div class="text-center" data-reveal>
+      <p class="inline-flex items-center gap-2 rounded-full border border-clay/25 bg-clay/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-clay dark:border-gold/25 dark:bg-gold/10 dark:text-gold">Good to Know</p>
+      <h2 class="mt-4 font-display text-3xl font-bold tracking-tight text-ink dark:text-cream">Frequently asked</h2>
+    </div>
+
+    <div class="mt-8 space-y-3" data-reveal>
+      <div class="rounded-2xl border border-line bg-white shadow-card dark:border-white/10 dark:bg-nightc" data-accordion>
+        <button type="button" data-accordion-trigger aria-expanded="false" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-start text-sm font-bold text-ink dark:text-cream sm:text-base">
+          Do I need a booking?
+          <i data-chevron data-lucide="chevron-down" class="h-5 w-5 shrink-0 text-clay transition-transform dark:text-gold"></i>
+        </button>
+        <div data-accordion-panel class="hidden px-6 pb-5">
+          <p class="text-sm leading-relaxed text-stone-600 dark:text-stone-400">Counter seats are walk-in only. Tables for three or more are best booked through the enquiry form — especially Friday and Saturday evenings.</p>
+        </div>
+      </div>
+      <div class="rounded-2xl border border-line bg-white shadow-card dark:border-white/10 dark:bg-nightc" data-accordion>
+        <button type="button" data-accordion-trigger aria-expanded="false" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-start text-sm font-bold text-ink dark:text-cream sm:text-base">
+          Can you cater dietary requirements?
+          <i data-chevron data-lucide="chevron-down" class="h-5 w-5 shrink-0 text-clay transition-transform dark:text-gold"></i>
+        </button>
+        <div data-accordion-panel class="hidden px-6 pb-5">
+          <p class="text-sm leading-relaxed text-stone-600 dark:text-stone-400">Vegetarian bowls are cooked in a separate pot and we can prepare gluten-free noodles on request. Note allergies in the special request field and the kitchen will call you back.</p>
+        </div>
+      </div>
+      <div class="rounded-2xl border border-line bg-white shadow-card dark:border-white/10 dark:bg-nightc" data-accordion>
+        <button type="button" data-accordion-trigger aria-expanded="false" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-start text-sm font-bold text-ink dark:text-cream sm:text-base">
+          How large groups do you take?
+          <i data-chevron data-lucide="chevron-down" class="h-5 w-5 shrink-0 text-clay transition-transform dark:text-gold"></i>
+        </button>
+        <div data-accordion-panel class="hidden px-6 pb-5">
+          <p class="text-sm leading-relaxed text-stone-600 dark:text-stone-400">Up to ten guests online. For larger celebrations send an enquiry with your date — we open the back room on weekday evenings for groups up to eighteen.</p>
+        </div>
+      </div>
+      <div class="rounded-2xl border border-line bg-white shadow-card dark:border-white/10 dark:bg-nightc" data-accordion>
+        <button type="button" data-accordion-trigger aria-expanded="false" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-start text-sm font-bold text-ink dark:text-cream sm:text-base">
+          When will I hear back?
+          <i data-chevron data-lucide="chevron-down" class="h-5 w-5 shrink-0 text-clay transition-transform dark:text-gold"></i>
+        </button>
+        <div data-accordion-panel class="hidden px-6 pb-5">
+          <p class="text-sm leading-relaxed text-stone-600 dark:text-stone-400">Same day, usually within two hours during opening times. Every enquiry gets a reference number starting with NB- so you can quote it on arrival.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ SUCCESS MODAL ============ -->
+<div id="successModal" class="fixed inset-0 z-[70] hidden" role="dialog" aria-modal="true" aria-labelledby="successTitle">
+  <div class="absolute inset-0 bg-ink/75 backdrop-blur-sm" data-success-close></div>
+  <div class="relative flex h-full w-full items-center justify-center p-4">
+    <div class="w-full max-w-md rounded-[2rem] bg-white p-8 text-center shadow-soft dark:bg-nightc">
+      <span class="mx-auto grid h-16 w-16 place-items-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-500/15 dark:text-emerald-400">
+        <i data-lucide="check" class="h-8 w-8"></i>
+      </span>
+      <h2 id="successTitle" class="mt-5 font-display text-2xl font-bold text-ink dark:text-cream">Enquiry received</h2>
+      <p id="successSummary" class="mt-3 text-sm leading-relaxed text-stone-600 dark:text-stone-400"></p>
+      <div class="mt-5 rounded-2xl bg-sand px-4 py-3 dark:bg-white/5">
+        <p class="text-[11px] font-bold uppercase tracking-[0.18em] text-stone-500 dark:text-stone-400">Your reference</p>
+        <p id="successRef" class="mt-1 font-display text-lg font-bold text-ember dark:text-gold"></p>
+      </div>
+      <p class="mt-4 text-xs leading-relaxed text-stone-500 dark:text-stone-400">We will confirm by phone or email. Your form and selected bowls have been cleared.</p>
+      <button id="successClose" type="button" data-success-close class="mt-6 w-full rounded-full bg-clay px-6 py-3.5 text-sm font-bold text-white transition hover:bg-clayd">Done</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer class="border-t border-line bg-sand/60 dark:border-white/10 dark:bg-night">
+  <div class="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-2 lg:grid-cols-4">
+    <div>
+      <a href="index.html" class="flex items-center gap-2.5" aria-label="NoriBowl home">
+        <span class="grid h-10 w-10 place-items-center rounded-2xl bg-clay text-white"><i data-lucide="soup" class="h-5 w-5"></i></span>
+        <span class="font-display text-xl font-bold text-ink dark:text-cream">NoriBowl</span>
+      </a>
+      <p class="mt-4 text-sm leading-relaxed text-stone-600 dark:text-stone-400">Warm bowls. Bold flavoured broths. A small ramen house on Harbour Road serving the neighbourhood since 2014.</p>
+      <div class="mt-5 flex gap-2">
+        <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="NoriBowl on Instagram" class="grid h-10 w-10 place-items-center rounded-full border border-line bg-white text-ink transition hover:border-clay hover:text-clay dark:border-white/10 dark:bg-nightc dark:text-cream"><i data-lucide="instagram" class="h-4 w-4"></i></a>
+        <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="NoriBowl on Facebook" class="grid h-10 w-10 place-items-center rounded-full border border-line bg-white text-ink transition hover:border-clay hover:text-clay dark:border-white/10 dark:bg-nightc dark:text-cream"><i data-lucide="facebook" class="h-4 w-4"></i></a>
+        <a href="https://x.com" target="_blank" rel="noopener" aria-label="NoriBowl on X" class="grid h-10 w-10 place-items-center rounded-full border border-line bg-white text-ink transition hover:border-clay hover:text-clay dark:border-white/10 dark:bg-nightc dark:text-cream"><i data-lucide="twitter" class="h-4 w-4"></i></a>
+      </div>
+    </div>
+    <div>
+      <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-ink dark:text-cream">Explore</h3>
+      <ul class="mt-4 space-y-2.5 text-sm">
+        <li><a href="index.html" class="transition hover:text-clay dark:hover:text-gold">Home 1</a></li>
+        <li><a href="home2.html" class="transition hover:text-clay dark:hover:text-gold">Home 2</a></li>
+        <li><a href="menu.html" class="transition hover:text-clay dark:hover:text-gold">Menu</a></li>
+        <li><a href="story.html" class="transition hover:text-clay dark:hover:text-gold">Our Story</a></li>
+        <li><a href="gallery.html" class="transition hover:text-clay dark:hover:text-gold">Gallery</a></li>
+        <li><a href="catering.html" class="transition hover:text-clay dark:hover:text-gold">Catering &amp; Events</a></li>
+        <li><a href="contact.html" class="transition hover:text-clay dark:hover:text-gold">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-ink dark:text-cream">Visit</h3>
+      <ul class="mt-4 space-y-2.5 text-sm">
+        <li>128 Harbour Road</li>
+        <li>Southside, Melbourne VIC 3000</li>
+        <li>Mon–Thu · 11:30–21:30</li>
+        <li>Fri–Sat · 11:30–22:30</li>
+        <li>Sun · 12:00–21:00</li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-ink dark:text-cream">Contact</h3>
+      <ul class="mt-4 space-y-2.5 text-sm">
+        <li><a href="tel:+61391234578" class="transition hover:text-clay dark:hover:text-gold">(03) 9123 4578</a></li>
+        <li><a href="mailto:hello@noribowl.com" class="transition hover:text-clay dark:hover:text-gold">hello@noribowl.com</a></li>
+      </ul>
+      <a href="#enquiry" class="mt-5 inline-flex items-center gap-2 rounded-full bg-clay px-5 py-2.5 text-sm font-bold text-white transition hover:bg-clayd">Order Enquiry</a>
+    </div>
+  </div>
+  <div class="border-t border-line dark:border-white/10">
+    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-5 text-xs text-stone-500 dark:text-stone-500 sm:flex-row sm:px-6">
+      <p>&copy; <span data-year>2026</span> NoriBowl Ramen &amp; Noodle House. All rights reserved.</p>
+      <div class="flex items-center gap-5">
+        <p>Slow-simmered daily on Harbour Road.</p>
+        <button type="button" data-back-to-top class="inline-flex items-center gap-1.5 font-semibold text-ink transition hover:text-clay dark:text-cream dark:hover:text-gold">Back to top <i data-lucide="arrow-up" class="h-3.5 w-3.5"></i></button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/contact.js"></script>
+</body>
+</html>

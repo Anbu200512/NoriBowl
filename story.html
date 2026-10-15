@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<title>Our Story | NoriBowl Ramen &amp; Noodle House</title>
+<meta name="description" content="The NoriBowl story — how a ten-seat ramen counter grew into a neighbourhood institution, and what happens to our broth between 4 a.m. and opening time.">
+<script>
+(function(){try{
+var t=localStorage.getItem('noribowl_theme');
+if(t!=='dark'&&t!=='light'){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+if(t==='dark'){document.documentElement.classList.add('dark');}
+var d=localStorage.getItem('noribowl_direction');
+if(d==='rtl'||d==='ltr'){document.documentElement.setAttribute('dir',d);}
+}catch(e){}})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        cream: '#FBF7F1', sand: '#F3E9DA', line: '#E7DCC8',
+        clay: '#B4602A', clayd: '#95491D', ember: '#8E3120',
+        gold: '#D6A054', ink: '#221812', night: '#17110D', nightc: '#221A14',
+        nori: '#2C4536'
+      },
+      fontFamily: {
+        display: ['Fraunces', 'Georgia', 'serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif']
+      },
+      boxShadow: {
+        soft: '0 24px 50px -24px rgba(34,24,18,.45)',
+        card: '0 12px 30px -16px rgba(34,24,18,.25)'
+      }
+    }
+  }
+};
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; }
+  .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.is-in { opacity: 1; transform: none; }
+  .grain { background-image: radial-gradient(rgba(255,255,255,.14) 1px, transparent 1px); background-size: 24px 24px; }
+  :where(a, button, input, select, textarea):focus-visible { outline: 2px solid #B4602A; outline-offset: 2px; border-radius: 999px; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+</style>
+</head>
+<body class="min-h-screen bg-cream font-sans text-stone-600 dark:bg-night dark:text-stone-400">
+
+<!-- ============ NAVBAR ============ -->
+<header class="sticky top-0 z-50 border-b border-line bg-cream/95 backdrop-blur dark:border-white/10 dark:bg-night/95">
+  <nav class="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
+    <a href="index.html" class="flex shrink-0 items-center gap-2.5" aria-label="NoriBowl home">
+      <span class="grid h-10 w-10 place-items-center rounded-2xl bg-clay text-white shadow-soft"><i data-lucide="soup" class="h-5 w-5"></i></span>
+      <span class="leading-none">
+        <span class="block font-display text-xl font-bold tracking-tight text-ink dark:text-cream">NoriBowl</span>
+      </span>
+    </a>
+
+    <div class="hidden items-center gap-1 lg:flex">
+      <div class="relative" data-dropdown>
+        <button id="homeMenuBtn" type="button" aria-expanded="false" aria-haspopup="true" class="inline-flex items-center gap-1 rounded-full px-3 py-2 text-sm font-semibold text-stone-600 transition hover:bg-sand hover:text-ink dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-cream">
+          Home <i data-lucide="chevron-down" class="h-4 w-4"></i>
+        </button>
+        <div id="homeMenuPanel" class="absolute start-0 top-full z-50 mt-2 hidden w-52 rounded-2xl border border-line bg-white p-2 shadow-soft dark:border-white/10 dark:bg-nightc">
+          <a href="index.html" class="flex items-center gap-2 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 transition hover:bg-sand hover:text-ink dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-cream"><i data-lucide="home" class="h-4 w-4"></i>Home 1</a>
+          <a href="home2.html" class="mt-1 flex items-center gap-2 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 transition hover:bg-sand hover:text-ink dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-cream"><i data-lucide="layout-grid" class="h-4 w-4"></i>Home 2</a>
+        </div>
+      </div>
+      <a href="story.html" aria-current="page" class="rounded-full px-3 py-2 text-sm font-bold text-clay transition hover:bg-sand dark:text-gold dark:hover:bg-white/10">Our Story</a>
+      <a href="menu.html" class="rounded-full px-3 py-2 text-sm font-semibold text-stone-600 transition hover:bg-sand hover:text-ink dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-cream">Menu</a>
+      <a href="gallery.html" class="rounded-full px-3 py-2 text-sm font-semibold text-stone-600 transition hover:bg-sand hover:text-ink dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-cream">Gallery</a>
+      <a href="catering.html" class="rounded-full px-3 py-2 text-sm font-semibold text-stone-600 transition hover:bg-sand hover:text-ink dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-cream">Catering</a>
+      <a href="contact.html" class="rounded-full px-3 py-2 text-sm font-semibold text-stone-600 transition hover:bg-sand hover:text-ink dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-cream">Contact</a>
+    </div>
+
+    <div class="flex items-center gap-2">
+      <button data-dir-toggle type="button" aria-label="Switch to right-to-left layout" title="RTL" class="hidden h-9 w-9 place-items-center rounded-full border border-line bg-white text-ink transition hover:border-clay hover:text-clay dark:border-white/10 dark:bg-nightc dark:text-cream dark:hover:text-gold lg:grid lg:h-10 lg:w-10">
+        <i data-lucide="arrow-left-right" class="h-4 w-4"></i>
+      </button>
+      <button data-theme-toggle type="button" aria-label="Switch to dark theme" title="Dark mode" class="hidden h-9 w-9 place-items-center rounded-full border border-line bg-white text-ink transition hover:border-clay hover:text-clay dark:border-white/10 dark:bg-nightc dark:text-cream dark:hover:text-gold lg:grid lg:h-10 lg:w-10">
+        <i data-lucide="sun" class="hidden h-4 w-4 dark:block"></i>
+        <i data-lucide="moon" class="h-4 w-4 dark:hidden"></i>
+      </button>
+      <a href="contact.html#enquiry" class="relative hidden items-center gap-2 rounded-full bg-clay px-5 py-2.5 text-sm font-bold text-white shadow-soft transition hover:bg-clayd lg:inline-flex">
+        Order Enquiry
+        <span data-enq-badge class="hidden min-w-5 rounded-full bg-white px-1.5 py-0.5 text-center text-[10px] font-bold text-ember">0</span>
+      </a>
+      <button id="navToggle" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Toggle navigation menu" class="grid h-9 w-9 sm:h-10 sm:w-10 place-items-center rounded-full border border-line bg-white text-ink transition dark:border-white/10 dark:bg-nightc dark:text-cream lg:hidden">
+        <i data-lucide="menu" class="h-5 w-5"></i>
+      </button>
+    </div>
+  </nav>
+
+  <div id="mobileMenu" class="hidden border-t border-line bg-cream dark:border-white/10 dark:bg-night lg:hidden">
+    <div class="mx-auto max-w-7xl space-y-1 px-4 py-4 sm:px-6">
+      <div>
+        <button id="mobileHomeBtn" type="button" aria-expanded="false" aria-controls="mobileHomePanel" class="flex w-full items-center justify-between rounded-xl px-4 py-3 text-base font-semibold text-ink dark:text-cream">
+          <span class="flex items-center gap-2"><i data-lucide="home" class="h-4 w-4 text-clay dark:text-gold"></i>Home</span>
+          <i data-chevron data-lucide="chevron-down" class="h-4 w-4 transition-transform"></i>
+        </button>
+        <div id="mobileHomePanel" class="ms-4 mt-1 hidden space-y-1 border-s-2 border-line ps-4 dark:border-white/10">
+          <a href="index.html" class="block rounded-lg px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300">Home 1</a>
+          <a href="home2.html" class="block rounded-lg px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300">Home 2</a>
+        </div>
+      </div>
+      <a href="story.html" aria-current="page" class="block rounded-xl px-4 py-3 text-base font-bold text-clay dark:text-gold">Our Story</a>
+      <a href="menu.html" class="block rounded-xl px-4 py-3 text-base font-semibold text-ink dark:text-cream">Menu</a>
+      <a href="gallery.html" class="block rounded-xl px-4 py-3 text-base font-semibold text-ink dark:text-cream">Gallery</a>
+      <a href="catering.html" class="block rounded-xl px-4 py-3 text-base font-semibold text-ink dark:text-cream">Catering</a>
+      <a href="contact.html" class="block rounded-xl px-4 py-3 text-base font-semibold text-ink dark:text-cream">Contact</a>
+      <div class="mt-2 flex items-center justify-center gap-2">
+        <button data-dir-toggle type="button" aria-label="Switch to right-to-left layout" title="RTL" class="grid h-10 w-10 place-items-center rounded-full border border-line bg-white text-ink transition hover:border-clay hover:text-clay dark:border-white/10 dark:bg-nightc dark:text-cream dark:hover:text-gold">
+          <i data-lucide="arrow-left-right" class="h-4 w-4"></i>
+        </button>
+        <button data-theme-toggle type="button" aria-label="Switch to dark theme" title="Dark mode" class="grid h-10 w-10 place-items-center rounded-full border border-line bg-white text-ink transition hover:border-clay hover:text-clay dark:border-white/10 dark:bg-nightc dark:text-cream dark:hover:text-gold">
+          <i data-lucide="sun" class="hidden h-4 w-4 dark:block"></i>
+          <i data-lucide="moon" class="h-4 w-4 dark:hidden"></i>
+        </button>
+      </div>
+      <a href="contact.html#enquiry" class="mt-2 flex items-center justify-center gap-2 rounded-full bg-clay px-5 py-3 text-sm font-bold text-white shadow-soft hover:bg-clayd">
+        Order Enquiry <i data-lucide="arrow-right" class="h-4 w-4"></i>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ============ PAGE HERO ============ -->
+<section class="relative isolate overflow-hidden">
+  <img src="assets/images/story-origin.jpg" alt="The original NoriBowl shopfront and dining room" class="absolute inset-0 -z-10 h-full w-full object-cover">
+  <div class="absolute inset-0 -z-10 bg-ink/85"></div>
+  <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16">
+    <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs font-semibold text-stone-400">
+      <a href="index.html" class="transition hover:text-gold">Home</a>
+      <i data-lucide="chevron-right" class="h-3.5 w-3.5 rtl:rotate-180"></i>
+      <span class="text-gold">Our Story</span>
+    </nav>
+    <h1 class="mt-4 max-w-3xl font-display text-3xl font-bold leading-tight break-words text-cream sm:text-4xl lg:text-5xl">Ten stools, one pot, one rule</h1>
+
+
+    <div class="mt-6 flex flex-wrap items-center gap-3" data-reveal>
+      <span class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-stone-200 backdrop-blur"><i data-lucide="soup" class="h-3.5 w-3.5 text-gold"></i> Hakata tonkotsu</span>
+      <span class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-stone-200 backdrop-blur"><i data-lucide="map-pin" class="h-3.5 w-3.5 text-gold"></i> Harbour Road, since 2014</span>
+      <span class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-stone-200 backdrop-blur"><i data-lucide="users" class="h-3.5 w-3.5 text-gold"></i> Ten-stool counter</span>
+    </div>
+
+    <p class="mt-6 max-w-2xl border-s-2 border-gold/60 ps-4 text-sm italic leading-relaxed text-stone-300 sm:text-base">“Make the broth as if your grandmother is watching, and serve it like the queue is already at the door.”</p>
+
+    <div class="mt-8 flex flex-wrap gap-3" data-reveal>
+      <a href="menu.html" class="group inline-flex items-center gap-2 rounded-full bg-clay px-6 py-3 text-sm font-bold text-white shadow-soft transition hover:bg-clayd">
+        Explore the menu <i data-lucide="arrow-right" class="h-4 w-4 transition group-hover:translate-x-0.5 rtl:rotate-180 rtl:group-hover:-translate-x-0.5"></i>
+      </a>
+      <a href="contact.html#enquiry" class="inline-flex items-center gap-2 rounded-full border border-cream/40 px-6 py-3 text-sm font-bold text-cream backdrop-blur transition hover:bg-cream hover:text-ink">
+        Order Enquiry <i data-lucide="calendar-check" class="h-4 w-4"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ORIGIN ============ -->
+<section class="py-20 sm:py-24">
+  <div class="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2">
+    <div data-reveal>
+      <p class="inline-flex items-center gap-2 rounded-full border border-clay/25 bg-clay/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-clay dark:border-gold/25 dark:bg-gold/10 dark:text-gold">Our Origin</p>
+      <h2 class="mt-4 font-display text-3xl font-bold tracking-tight text-ink dark:text-cream sm:text-4xl">It started with a borrowed stockpot</h2>
+      <p class="mt-5 leading-relaxed text-stone-600 dark:text-stone-400">
+        Kenji Nakamura spent a decade in Fukuoka ramen shops — washing bones at dawn, skimming pots at midnight. In 2014 he rented a shuttered fishmonger on Harbour Road, laid ten stools along a single plank of timber and opened with one bowl on the board: Hakata tonkotsu.
+      </p>
+      <p class="mt-4 leading-relaxed text-stone-600 dark:text-stone-400">
+        The first winter was quiet. Then a food blogger wrote six sentences about the broth, and by the following Saturday there was a queue around the block. We have never taken the pot off since.
+      </p>
+      <div class="mt-8 grid grid-cols-3 gap-4 border-t border-line pt-6 dark:border-white/10">
+        <div><p class="font-display text-3xl font-bold text-ember dark:text-gold">2014</p><p class="mt-1 text-xs font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400">First service</p></div>
+        <div><p class="font-display text-3xl font-bold text-ember dark:text-gold">10</p><p class="mt-1 text-xs font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400">Counter stools</p></div>
+        <div><p class="font-display text-3xl font-bold text-ember dark:text-gold">40k+</p><p class="mt-1 text-xs font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400">Bowls served</p></div>
+      </div>
+    </div>
+    <div class="relative" data-reveal>
+      <div class="overflow-hidden rounded-[2rem] shadow-soft">
+        <img src="assets/images/story-gallery-4.jpg" alt="Inside the original ramen shop with guests at the counter" loading="lazy" class="aspect-[4/3] w-full object-cover">
+      </div>
+      <div class="absolute -bottom-6 start-4 rounded-2xl border border-line bg-white px-5 py-4 shadow-soft dark:border-white/10 dark:bg-nightc sm:start-8">
+        <p class="text-[11px] font-bold uppercase tracking-[0.18em] text-clay dark:text-gold">Since day one</p>
+        <p class="mt-1 font-display text-base font-bold text-ink dark:text-cream">One recipe card, revised twice</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PHILOSOPHY ============ -->
+<section class="bg-ink py-16 text-cream sm:py-20">
+  <div class="mx-auto max-w-4xl px-4 text-center sm:px-6" data-reveal>
+    <span class="mx-auto grid h-14 w-14 place-items-center rounded-full bg-gold/15 text-gold"><i data-lucide="quote" class="h-7 w-7"></i></span>
+    <h2 class="mt-6 font-display text-2xl font-bold leading-snug sm:text-3xl lg:text-4xl">Ramen is not fast food. It is patient food, served quickly.</h2>
+    <p class="mx-auto mt-5 max-w-2xl leading-relaxed text-stone-400">Every part of the bowl has a clock of its own — bones for eighteen hours, tare for three years, noodles for eighty seconds. Our job is to keep those clocks honest.</p>
+    <p class="mt-6 text-sm font-bold uppercase tracking-[0.24em] text-gold">— The NoriBowl kitchen</p>
+  </div>
+</section>
+
+<!-- ============ BROTH PREPARATION ============ -->
+<section class="py-20 sm:py-24">
+  <div class="mx-auto grid max-w-7xl items-start gap-12 px-4 sm:px-6 lg:grid-cols-2">
+    <div class="lg:sticky lg:top-28" data-reveal>
+      <div class="overflow-hidden rounded-[2rem] shadow-soft">
+        <img src="assets/images/story-broth.jpg" alt="Broth simmering in the kitchen" loading="lazy" class="aspect-[4/3] w-full object-cover">
+      </div>
+      <div class="mt-6 rounded-3xl border border-line bg-white p-6 shadow-card dark:border-white/10 dark:bg-nightc">
+        <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-clay dark:text-gold">Broth Log</p>
+        <p class="mt-3 font-display text-lg font-bold leading-snug text-ink dark:text-cream">“Wednesday's pot tasted flat. We dumped forty litres and started again. That is the job.”</p>
+        <p class="mt-3 text-sm text-stone-500 dark:text-stone-400">Daichi Ito · Broth specialist</p>
+      </div>
+    </div>
+
+    <div data-reveal>
+      <p class="inline-flex items-center gap-2 rounded-full border border-clay/25 bg-clay/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-clay dark:border-gold/25 dark:bg-gold/10 dark:text-gold">Broth Preparation</p>
+      <h2 class="mt-4 font-display text-3xl font-bold tracking-tight text-ink dark:text-cream sm:text-4xl">Eighteen hours, told in four acts</h2>
+      <ol class="mt-8 space-y-6">
+        <li class="flex gap-5">
+          <span class="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-clay font-display text-sm font-bold text-white">01</span>
+          <div>
+            <h3 class="font-display text-lg font-bold text-ink dark:text-cream">Roast &amp; rinse</h3>
+            <p class="mt-1.5 text-sm leading-relaxed text-stone-600 dark:text-stone-400">Femurs roast until the edges caramelise, then get pressure-rinsed so the stock stays clean and sweet.</p>
+          </div>
+        </li>
+        <li class="flex gap-5">
+          <span class="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-clay font-display text-sm font-bold text-white">02</span>
+          <div>
+            <h3 class="font-display text-lg font-bold text-ink dark:text-cream">Rolling simmer</h3>
+            <p class="mt-1.5 text-sm leading-relaxed text-stone-600 dark:text-stone-400">A hard, steady boil emulsifies marrow and collagen into that signature ivory colour — never a lazy bubble.</p>
+          </div>
+        </li>
+        <li class="flex gap-5">
+          <span class="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-clay font-display text-sm font-bold text-white">03</span>
+          <div>
+            <h3 class="font-display text-lg font-bold text-ink dark:text-cream">Hourly skimming</h3>
+            <p class="mt-1.5 text-sm leading-relaxed text-stone-600 dark:text-stone-400">Someone stands over the pot all day. Foam comes off by hand so the broth never turns grey or heavy.</p>
+          </div>
+        </li>
+        <li class="flex gap-5">
+          <span class="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-clay font-display text-sm font-bold text-white">04</span>
+          <div>
+            <h3 class="font-display text-lg font-bold text-ink dark:text-cream">Season to order</h3>
+            <p class="mt-1.5 text-sm leading-relaxed text-stone-600 dark:text-stone-400">Tare goes into the empty bowl, broth is ladled over it, noodles drop in — ninety seconds from pot to pass.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NOODLES + INGREDIENTS ============ -->
+<section class="bg-sand/70 py-20 dark:bg-nightc/60 sm:py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6">
+    <div class="grid gap-8 lg:grid-cols-2">
+      <div class="overflow-hidden rounded-[2rem] bg-white shadow-card dark:bg-nightc" data-reveal>
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="assets/images/story-noodles.jpg" alt="Freshly made noodles at the noodle workshop" loading="lazy" class="h-full w-full object-cover">
+        </div>
+        <div class="p-7">
+          <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-clay dark:text-gold">Noodle-making</p>
+          <h2 class="mt-3 font-display text-2xl font-bold text-ink dark:text-cream">Milled, kneaded, rested overnight</h2>
+          <p class="mt-3 text-sm leading-relaxed text-stone-600 dark:text-stone-400">
+            We import wheat from Hokkaido and mill part of it in-house. Kansui water gives the dough its spring; a cold overnight rest gives it memory. Each morning the cutter sets three cuts — thin straight for tonkotsu, flat for shoyu, thick for mazesoba.
+          </p>
+        </div>
+      </div>
+
+      <div class="overflow-hidden rounded-[2rem] bg-white shadow-card dark:bg-nightc" data-reveal>
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="assets/images/story-ingredients.jpg" alt="Fresh ingredients prepared in the kitchen" loading="lazy" class="h-full w-full object-cover">
+        </div>
+        <div class="p-7">
+          <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-clay dark:text-gold">Ingredient quality</p>
+          <h2 class="mt-3 font-display text-2xl font-bold text-ink dark:text-cream">Named farms, not anonymous crates</h2>
+          <div class="mt-4 grid gap-3 sm:grid-cols-2">
+            <p class="flex items-start gap-2.5 rounded-2xl bg-sand px-4 py-3 text-sm text-stone-600 dark:bg-white/5 dark:text-stone-300"><i data-lucide="egg" class="mt-0.5 h-4 w-4 shrink-0 text-clay dark:text-gold"></i> Marinated eggs from Rowan Farm</p>
+            <p class="flex items-start gap-2.5 rounded-2xl bg-sand px-4 py-3 text-sm text-stone-600 dark:bg-white/5 dark:text-stone-300"><i data-lucide="sprout" class="mt-0.5 h-4 w-4 shrink-0 text-clay dark:text-gold"></i> Market greens picked twice weekly</p>
+            <p class="flex items-start gap-2.5 rounded-2xl bg-sand px-4 py-3 text-sm text-stone-600 dark:bg-white/5 dark:text-stone-300"><i data-lucide="wheat" class="mt-0.5 h-4 w-4 shrink-0 text-clay dark:text-gold"></i> Hokkaido wheat, milled locally</p>
+            <p class="flex items-start gap-2.5 rounded-2xl bg-sand px-4 py-3 text-sm text-stone-600 dark:bg-white/5 dark:text-stone-300"><i data-lucide="droplets" class="mt-0.5 h-4 w-4 shrink-0 text-clay dark:text-gold"></i> Three-year barrel shoyu tare</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TEAM ============ -->
+<section class="py-20 sm:py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6">
+    <div class="mx-auto max-w-2xl text-center" data-reveal>
+      <p class="inline-flex items-center gap-2 rounded-full border border-clay/25 bg-clay/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-clay dark:border-gold/25 dark:bg-gold/10 dark:text-gold">The Team</p>
+      <h2 class="mt-4 font-display text-3xl font-bold tracking-tight text-ink dark:text-cream sm:text-4xl">Faces behind the counter</h2>
+    </div>
+    <div class="mt-12 grid gap-6 md:grid-cols-3">
+      <article class="overflow-hidden rounded-3xl border border-line bg-white shadow-card dark:border-white/10 dark:bg-nightc" data-reveal>
+        <div class="aspect-[4/5] overflow-hidden">
+          <img src="assets/images/story-chef-1.jpg" alt="Kenji Nakamura, founder and head chef" loading="lazy" class="h-full w-full object-cover transition duration-500 hover:scale-105">
+        </div>
+        <div class="p-6">
+          <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-clay dark:text-gold">Founder &amp; Head Chef</p>
+          <h3 class="mt-2 font-display text-xl font-bold text-ink dark:text-cream">Kenji Nakamura</h3>
+          <p class="mt-2 text-sm leading-relaxed text-stone-600 dark:text-stone-400">Twenty-two years over ramen pots. Writes the recipe card, taste-tests every batch, still works the lunch rush.</p>
+        </div>
+      </article>
+      <article class="overflow-hidden rounded-3xl border border-line bg-white shadow-card dark:border-white/10 dark:bg-nightc" data-reveal>
+        <div class="aspect-[4/5] overflow-hidden">
+          <img src="assets/images/story-chef-2.jpg" alt="Daichi Ito, broth specialist" loading="lazy" class="h-full w-full object-cover transition duration-500 hover:scale-105">
+        </div>
+        <div class="p-6">
+          <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-clay dark:text-gold">Broth Specialist</p>
+          <h3 class="mt-2 font-display text-xl font-bold text-ink dark:text-cream">Daichi Ito</h3>
+          <p class="mt-2 text-sm leading-relaxed text-stone-600 dark:text-stone-400">Arrives at four a.m. to start the pots. Believes a broth tells you the truth within one spoonful.</p>
+        </div>
+      </article>
+      <article class="overflow-hidden rounded-3xl border border-line bg-white shadow-card dark:border-white/10 dark:bg-nightc" data-reveal>
+        <div class="aspect-[4/5] overflow-hidden">
+          <img src="assets/images/story-chef-3.jpg" alt="Haruto Aoki, noodle and prep lead" loading="lazy" class="h-full w-full object-cover transition duration-500 hover:scale-105">
+        </div>
+        <div class="p-6">
+          <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-clay dark:text-gold">Noodle &amp; Prep Lead</p>
+          <h3 class="mt-2 font-display text-xl font-bold text-ink dark:text-cream">Haruto Aoki</h3>
+          <p class="mt-2 text-sm leading-relaxed text-stone-600 dark:text-stone-400">Cuts both daily noodle batches, keeps the vegetable list honest and owns the house chilli oil recipe.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="bg-sand/70 py-20 dark:bg-nightc/60 sm:py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6">
+    <div class="flex flex-wrap items-end justify-between gap-6" data-reveal>
+      <div class="max-w-xl">
+        <p class="inline-flex items-center gap-2 rounded-full border border-clay/25 bg-clay/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-clay dark:border-gold/25 dark:bg-gold/10 dark:text-gold">The House</p>
+        <h2 class="mt-4 font-display text-3xl font-bold tracking-tight text-ink dark:text-cream sm:text-4xl">A look around the room</h2>
+      </div>
+      <p class="text-sm text-stone-500 dark:text-stone-400">Tap any photo to enlarge</p>
+    </div>
+
+    <div class="mt-10 grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-3">
+      <button type="button" class="group overflow-hidden rounded-3xl shadow-card" data-lightbox="assets/images/story-gallery-1.jpg" data-lightbox-alt="Decorated dining corner of the ramen house">
+        <img src="assets/images/story-gallery-1.jpg" alt="Decorated dining corner of the ramen house" loading="lazy" class="h-56 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-64">
+      </button>
+      <button type="button" class="group overflow-hidden rounded-3xl shadow-card" data-lightbox="assets/images/story-gallery-2.jpg" data-lightbox-alt="Warm timber interior with hanging lamps">
+        <img src="assets/images/story-gallery-2.jpg" alt="Warm timber interior with hanging lamps" loading="lazy" class="h-56 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-64">
+      </button>
+      <button type="button" class="group overflow-hidden rounded-3xl shadow-card" data-lightbox="assets/images/story-gallery-3.jpg" data-lightbox-alt="Guests seated in the main dining area">
+        <img src="assets/images/story-gallery-3.jpg" alt="Guests seated in the main dining area" loading="lazy" class="h-56 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-64">
+      </button>
+      <button type="button" class="group overflow-hidden rounded-3xl shadow-card" data-lightbox="assets/images/story-gallery-5.jpg" data-lightbox-alt="Table setting laid out before service">
+        <img src="assets/images/story-gallery-5.jpg" alt="Table setting laid out before service" loading="lazy" class="h-56 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-64">
+      </button>
+      <button type="button" class="group overflow-hidden rounded-3xl shadow-card" data-lightbox="assets/images/story-gallery-6.jpg" data-lightbox-alt="Lantern-lit street outside the restaurant at night">
+        <img src="assets/images/story-gallery-6.jpg" alt="Lantern-lit street outside the restaurant at night" loading="lazy" class="h-56 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-64">
+      </button>
+      <button type="button" class="group overflow-hidden rounded-3xl shadow-card" data-lightbox="assets/images/home-atmosphere.jpg" data-lightbox-alt="The counter and open kitchen at NoriBowl">
+        <img src="assets/images/home-atmosphere.jpg" alt="The counter and open kitchen at NoriBowl" loading="lazy" class="h-56 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-64">
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VALUES ============ -->
+<section class="py-20 sm:py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6">
+    <div class="mx-auto max-w-2xl text-center" data-reveal>
+      <p class="inline-flex items-center gap-2 rounded-full border border-clay/25 bg-clay/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-clay dark:border-gold/25 dark:bg-gold/10 dark:text-gold">What We Value</p>
+      <h2 class="mt-4 font-display text-3xl font-bold tracking-tight text-ink dark:text-cream sm:text-4xl">Three promises we keep daily</h2>
+    </div>
+    <div class="mt-12 grid gap-6 md:grid-cols-3">
+      <div class="rounded-3xl border border-line bg-white p-7 shadow-card dark:border-white/10 dark:bg-nightc" data-reveal>
+        <span class="grid h-12 w-12 place-items-center rounded-2xl bg-clay/10 text-clay dark:bg-gold/10 dark:text-gold"><i data-lucide="clock" class="h-6 w-6"></i></span>
+        <h3 class="mt-4 font-display text-lg font-bold text-ink dark:text-cream">Patience over shortcuts</h3>
+        <p class="mt-2 text-sm leading-relaxed text-stone-600 dark:text-stone-400">If the broth needs another hour, service waits an hour. Nothing powder-based ever touches our pots.</p>
+      </div>
+      <div class="rounded-3xl border border-line bg-white p-7 shadow-card dark:border-white/10 dark:bg-nightc" data-reveal>
+        <span class="grid h-12 w-12 place-items-center rounded-2xl bg-clay/10 text-clay dark:bg-gold/10 dark:text-gold"><i data-lucide="hand-heart" class="h-6 w-6"></i></span>
+        <h3 class="mt-4 font-display text-lg font-bold text-ink dark:text-cream">Hospitality without theatre</h3>
+        <p class="mt-2 text-sm leading-relaxed text-stone-600 dark:text-stone-400">Warm towels and big smiles are fine, but the real welcome is a bowl that arrives exactly how you ordered it.</p>
+      </div>
+      <div class="rounded-3xl border border-line bg-white p-7 shadow-card dark:border-white/10 dark:bg-nightc" data-reveal>
+        <span class="grid h-12 w-12 place-items-center rounded-2xl bg-clay/10 text-clay dark:bg-gold/10 dark:text-gold"><i data-lucide="users" class="h-6 w-6"></i></span>
+        <h3 class="mt-4 font-display text-lg font-bold text-ink dark:text-cream">A neighbourhood shop</h3>
+        <p class="mt-2 text-sm leading-relaxed text-stone-600 dark:text-stone-400">Regulars get the nod, first-timers get the explanation, and everyone gets the same carefully made bowl.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="pb-20 sm:pb-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6">
+    <div class="flex flex-col items-center justify-between gap-6 rounded-[2rem] bg-clay px-8 py-12 text-center shadow-soft md:flex-row md:text-start" data-reveal>
+      <div>
+        <p class="text-[11px] font-bold uppercase tracking-[0.24em] text-white/70">Enough history</p>
+        <h2 class="mt-3 font-display text-2xl font-bold text-white sm:text-3xl">Hungry for the story's best part?</h2>
+        <p class="mt-2 text-sm text-white/85">Twenty-four bowls are waiting on the other side.</p>
+      </div>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="menu.html" class="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-bold text-ember transition hover:bg-cream">View the menu <i data-lucide="arrow-right" class="h-4 w-4 rtl:rotate-180"></i></a>
+        <a href="contact.html#enquiry" class="inline-flex items-center gap-2 rounded-full border border-white/50 px-6 py-3.5 text-sm font-bold text-white transition hover:bg-white/10">Order enquiry</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ LIGHTBOX ============ -->
+<div id="nbLightbox" class="fixed inset-0 z-[70] hidden items-center justify-center bg-ink/95 p-4" role="dialog" aria-modal="true" aria-label="Photo gallery">
+  <div data-lightbox-backdrop class="absolute inset-0"></div>
+  <button id="nbLightboxClose" type="button" aria-label="Close gallery" class="absolute top-4 end-4 z-10 grid h-11 w-11 place-items-center rounded-full bg-white/10 text-cream transition hover:bg-white/20">
+    <i data-lucide="x" class="h-5 w-5"></i>
+  </button>
+  <button id="nbLightboxPrev" type="button" aria-label="Previous photo" class="absolute start-3 top-1/2 z-10 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-white/10 text-cream transition hover:bg-white/20 sm:start-6">
+    <i data-lucide="chevron-left" class="h-5 w-5"></i>
+  </button>
+  <button id="nbLightboxNext" type="button" aria-label="Next photo" class="absolute end-3 top-1/2 z-10 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-white/10 text-cream transition hover:bg-white/20 sm:end-6">
+    <i data-lucide="chevron-right" class="h-5 w-5"></i>
+  </button>
+  <figure class="relative z-10 max-h-full w-full max-w-4xl text-center">
+    <img id="nbLightboxImg" src="" alt="" class="mx-auto max-h-[75vh] w-auto rounded-2xl object-contain shadow-soft">
+    <figcaption id="nbLightboxCap" class="mt-4 text-sm text-stone-300"></figcaption>
+  </figure>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer class="border-t border-line bg-sand/60 dark:border-white/10 dark:bg-night">
+  <div class="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-2 lg:grid-cols-4">
+    <div>
+      <a href="index.html" class="flex items-center gap-2.5" aria-label="NoriBowl home">
+        <span class="grid h-10 w-10 place-items-center rounded-2xl bg-clay text-white"><i data-lucide="soup" class="h-5 w-5"></i></span>
+        <span class="font-display text-xl font-bold text-ink dark:text-cream">NoriBowl</span>
+      </a>
+      <p class="mt-4 text-sm leading-relaxed text-stone-600 dark:text-stone-400">Warm bowls. Bold flavoured broths. A small ramen house on Harbour Road serving the neighbourhood since 2014.</p>
+      <div class="mt-5 flex gap-2">
+        <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="NoriBowl on Instagram" class="grid h-10 w-10 place-items-center rounded-full border border-line bg-white text-ink transition hover:border-clay hover:text-clay dark:border-white/10 dark:bg-nightc dark:text-cream"><i data-lucide="instagram" class="h-4 w-4"></i></a>
+        <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="NoriBowl on Facebook" class="grid h-10 w-10 place-items-center rounded-full border border-line bg-white text-ink transition hover:border-clay hover:text-clay dark:border-white/10 dark:bg-nightc dark:text-cream"><i data-lucide="facebook" class="h-4 w-4"></i></a>
+        <a href="https://x.com" target="_blank" rel="noopener" aria-label="NoriBowl on X" class="grid h-10 w-10 place-items-center rounded-full border border-line bg-white text-ink transition hover:border-clay hover:text-clay dark:border-white/10 dark:bg-nightc dark:text-cream"><i data-lucide="twitter" class="h-4 w-4"></i></a>
+      </div>
+    </div>
+    <div>
+      <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-ink dark:text-cream">Explore</h3>
+      <ul class="mt-4 space-y-2.5 text-sm">
+        <li><a href="index.html" class="transition hover:text-clay dark:hover:text-gold">Home 1</a></li>
+        <li><a href="home2.html" class="transition hover:text-clay dark:hover:text-gold">Home 2</a></li>
+        <li><a href="menu.html" class="transition hover:text-clay dark:hover:text-gold">Menu</a></li>
+        <li><a href="story.html" class="transition hover:text-clay dark:hover:text-gold">Our Story</a></li>
+        <li><a href="gallery.html" class="transition hover:text-clay dark:hover:text-gold">Gallery</a></li>
+        <li><a href="catering.html" class="transition hover:text-clay dark:hover:text-gold">Catering &amp; Events</a></li>
+        <li><a href="contact.html" class="transition hover:text-clay dark:hover:text-gold">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-ink dark:text-cream">Visit</h3>
+      <ul class="mt-4 space-y-2.5 text-sm">
+        <li>128 Harbour Road</li>
+        <li>Southside, Melbourne VIC 3000</li>
+        <li>Mon–Thu · 11:30–21:30</li>
+        <li>Fri–Sat · 11:30–22:30</li>
+        <li>Sun · 12:00–21:00</li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-ink dark:text-cream">Contact</h3>
+      <ul class="mt-4 space-y-2.5 text-sm">
+        <li><a href="tel:+61391234578" class="transition hover:text-clay dark:hover:text-gold">(03) 9123 4578</a></li>
+        <li><a href="mailto:hello@noribowl.com" class="transition hover:text-clay dark:hover:text-gold">hello@noribowl.com</a></li>
+      </ul>
+      <a href="contact.html#enquiry" class="mt-5 inline-flex items-center gap-2 rounded-full bg-clay px-5 py-2.5 text-sm font-bold text-white transition hover:bg-clayd">Order Enquiry</a>
+    </div>
+  </div>
+  <div class="border-t border-line dark:border-white/10">
+    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-5 text-xs text-stone-500 dark:text-stone-500 sm:flex-row sm:px-6">
+      <p>&copy; <span data-year>2026</span> NoriBowl Ramen &amp; Noodle House. All rights reserved.</p>
+      <div class="flex items-center gap-5">
+        <p>Slow-simmered daily on Harbour Road.</p>
+        <button type="button" data-back-to-top class="inline-flex items-center gap-1.5 font-semibold text-ink transition hover:text-clay dark:text-cream dark:hover:text-gold">Back to top <i data-lucide="arrow-up" class="h-3.5 w-3.5"></i></button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
