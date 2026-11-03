@@ -69,8 +69,8 @@ tailwind.config = {
           Home <i data-lucide="chevron-down" class="h-4 w-4"></i>
         </button>
         <div id="homeMenuPanel" class="absolute start-0 top-full z-50 mt-2 hidden w-52 rounded-2xl border border-line bg-white p-2 shadow-soft dark:border-white/10 dark:bg-nightc">
-          <a href="index.html" class="flex items-center gap-2 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 transition hover:bg-sand hover:text-ink dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-cream"><i data-lucide="home" class="h-4 w-4"></i>Home 1</a>
-          <a href="home2.html" class="mt-1 flex items-center gap-2 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 transition hover:bg-sand hover:text-ink dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-cream"><i data-lucide="layout-grid" class="h-4 w-4"></i>Home 2</a>
+          <a href="index.html" class="flex items-center gap-2 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 transition hover:bg-sand hover:text-ink dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-cream">Home 1</a>
+          <a href="home2.html" class="mt-1 flex items-center gap-2 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 transition hover:bg-sand hover:text-ink dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-cream">Home 2</a>
         </div>
       </div>
       <a href="story.html" class="rounded-full px-3 py-2 text-sm font-semibold text-stone-600 transition hover:bg-sand hover:text-ink dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-cream">Our Story</a>
@@ -98,7 +98,7 @@ tailwind.config = {
     </div>
   </nav>
 
-  <div id="mobileMenu" class="hidden border-t border-line bg-cream dark:border-white/10 dark:bg-night lg:hidden">
+  <div id="mobileMenu" class="absolute inset-x-0 top-full hidden max-h-[85vh] overflow-y-auto border-t border-line bg-cream shadow-soft dark:border-white/10 dark:bg-night lg:hidden">
     <div class="mx-auto max-w-7xl space-y-1 px-4 py-4 sm:px-6">
       <div>
         <button id="mobileHomeBtn" type="button" aria-expanded="false" aria-controls="mobileHomePanel" class="flex w-full items-center justify-between rounded-xl px-4 py-3 text-base font-semibold text-ink dark:text-cream">
@@ -133,10 +133,10 @@ tailwind.config = {
 
 <main>
 <!-- ============ PAGE HERO ============ -->
-<section class="relative isolate overflow-hidden">
+<section class="relative isolate flex min-h-[60vh] items-center overflow-hidden">
   <img src="assets/images/home2-hero.jpg" alt="NoriBowl dining room set for an event" class="absolute inset-0 -z-10 h-full w-full object-cover">
   <div class="absolute inset-0 -z-10 bg-ink/85"></div>
-  <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16">
+  <div class="mx-auto w-full max-w-7xl px-4 py-14 sm:px-6 sm:py-16">
     <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs font-semibold text-stone-400">
       <a href="index.html" class="transition hover:text-gold">Home</a>
       <i data-lucide="chevron-right" class="h-3.5 w-3.5 rtl:rotate-180"></i>
@@ -172,17 +172,17 @@ tailwind.config = {
     </div>
     <div class="mt-12 grid gap-6 md:grid-cols-3 [&>*]:min-w-0">
       <div class="rounded-3xl border border-line bg-white p-7 shadow-card dark:border-white/10 dark:bg-nightc" data-reveal>
-        <span class="grid h-12 w-12 place-items-center rounded-2xl bg-clay/10 text-clay dark:bg-gold/10 dark:text-gold"><i data-lucide="briefcase" class="h-6 w-6"></i></span>
+        <img src="assets/images/menu-dry-1.jpg" alt="Mazesoba bowl prepared for an office lunch" loading="lazy" class="h-40 w-full rounded-2xl object-cover">
         <h3 class="mt-4 font-display text-lg font-bold text-ink dark:text-cream">Office &amp; team lunches</h3>
         <p class="mt-2 text-sm leading-relaxed text-stone-600 dark:text-stone-400">Hot bowls or bento platters delivered to your desk between 11:30 and 14:00, set up with labels, chopsticks and compostable ware.</p>
       </div>
       <div class="rounded-3xl border border-line bg-white p-7 shadow-card dark:border-white/10 dark:bg-nightc" data-reveal>
-        <span class="grid h-12 w-12 place-items-center rounded-2xl bg-clay/10 text-clay dark:bg-gold/10 dark:text-gold"><i data-lucide="party-popper" class="h-6 w-6"></i></span>
+        <img src="assets/images/story-gallery-5.jpg" alt="Long table set for a private party" loading="lazy" class="h-40 w-full rounded-2xl object-cover">
         <h3 class="mt-4 font-display text-lg font-bold text-ink dark:text-cream">Private parties</h3>
         <p class="mt-2 text-sm leading-relaxed text-stone-600 dark:text-stone-400">Birthdays, farewells and long-table dinners — in your space or ours. We cook on site where venues allow, or arrive hot and ready.</p>
       </div>
       <div class="rounded-3xl border border-line bg-white p-7 shadow-card dark:border-white/10 dark:bg-nightc" data-reveal>
-        <span class="grid h-12 w-12 place-items-center rounded-2xl bg-clay/10 text-clay dark:bg-gold/10 dark:text-gold"><i data-lucide="store" class="h-6 w-6"></i></span>
+        <img src="assets/images/story-gallery-6.jpg" alt="Lantern-lit night market street where the noodle bar sets up" loading="lazy" class="h-40 w-full rounded-2xl object-cover">
         <h3 class="mt-4 font-display text-lg font-bold text-ink dark:text-cream">Markets &amp; festivals</h3>
         <p class="mt-2 text-sm leading-relaxed text-stone-600 dark:text-stone-400">Our noodle bar travels with a compact gas setup — we have served night markets, gallery openings and two street festivals a month since 2019.</p>
       </div>

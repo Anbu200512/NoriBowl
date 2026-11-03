@@ -79,8 +79,8 @@ tailwind.config = {
           Home <i data-lucide="chevron-down" class="h-4 w-4"></i>
         </button>
         <div id="homeMenuPanel" class="absolute start-0 top-full z-50 mt-2 hidden w-52 rounded-2xl border border-line bg-white p-2 shadow-soft dark:border-white/10 dark:bg-nightc">
-          <a href="index.html" class="flex items-center gap-2 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 transition hover:bg-sand hover:text-ink dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-cream"><i data-lucide="home" class="h-4 w-4"></i>Home 1</a>
-          <a href="home2.html" class="mt-1 flex items-center gap-2 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 transition hover:bg-sand hover:text-ink dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-cream"><i data-lucide="layout-grid" class="h-4 w-4"></i>Home 2</a>
+          <a href="index.html" class="flex items-center gap-2 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 transition hover:bg-sand hover:text-ink dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-cream">Home 1</a>
+          <a href="home2.html" class="mt-1 flex items-center gap-2 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 transition hover:bg-sand hover:text-ink dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-cream">Home 2</a>
         </div>
       </div>
       <a href="story.html" class="rounded-full px-3 py-2 text-sm font-semibold text-stone-600 transition hover:bg-sand hover:text-ink dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-cream">Our Story</a>
@@ -108,7 +108,7 @@ tailwind.config = {
     </div>
   </nav>
 
-  <div id="mobileMenu" class="hidden border-t border-line bg-cream dark:border-white/10 dark:bg-night lg:hidden">
+  <div id="mobileMenu" class="absolute inset-x-0 top-full hidden max-h-[85vh] overflow-y-auto border-t border-line bg-cream shadow-soft dark:border-white/10 dark:bg-night lg:hidden">
     <div class="mx-auto max-w-7xl space-y-1 px-4 py-4 sm:px-6">
       <div>
         <button id="mobileHomeBtn" type="button" aria-expanded="false" aria-controls="mobileHomePanel" class="flex w-full items-center justify-between rounded-xl px-4 py-3 text-base font-semibold text-ink dark:text-cream">
@@ -143,10 +143,10 @@ tailwind.config = {
 
 <main>
 <!-- ============ PAGE HERO ============ -->
-<section class="relative isolate overflow-hidden">
+<section class="relative isolate flex min-h-[60vh] items-center overflow-hidden">
   <img src="assets/images/contact-venue.jpg" alt="The NoriBowl dining room before service" class="absolute inset-0 -z-10 h-full w-full object-cover">
   <div class="absolute inset-0 -z-10 bg-ink/85"></div>
-  <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16">
+  <div class="mx-auto w-full max-w-7xl px-4 py-14 sm:px-6 sm:py-16">
     <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs font-semibold text-stone-400">
       <a href="index.html" class="transition hover:text-gold">Home</a>
       <i data-lucide="chevron-right" class="h-3.5 w-3.5 rtl:rotate-180"></i>
@@ -218,18 +218,18 @@ tailwind.config = {
     </div>
 
     <!-- form column -->
-    <div class="rounded-[2rem] border border-line bg-white p-7 shadow-card dark:border-white/10 dark:bg-nightc sm:p-9" data-reveal>
+    <div class="rounded-[2rem] border border-line bg-white p-6 shadow-card dark:border-white/10 dark:bg-nightc sm:p-7" data-reveal>
       <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-clay dark:text-gold">Order Enquiry</p>
-      <h2 class="mt-3 font-display text-2xl font-bold text-ink dark:text-cream sm:text-3xl">Tell us what you need</h2>
-      <p class="mt-2 text-sm leading-relaxed text-stone-600 dark:text-stone-400">Fields marked with * are required. We confirm by phone or email the same day.</p>
+      <h2 class="mt-2 font-display text-2xl font-bold text-ink dark:text-cream sm:text-3xl">Tell us what you need</h2>
+      <p class="mt-1.5 text-sm leading-relaxed text-stone-600 dark:text-stone-400">Fields marked with * are required. We confirm by phone or email the same day.</p>
 
       <!-- selected dishes from menu -->
-      <div class="mt-6 rounded-2xl border border-dashed border-line bg-sand/60 p-4 dark:border-white/15 dark:bg-white/5">
+      <div class="mt-4 rounded-2xl border border-dashed border-line bg-sand/60 p-3.5 dark:border-white/15 dark:bg-white/5">
         <p class="text-[11px] font-bold uppercase tracking-[0.18em] text-ink dark:text-cream">Bowls from the menu</p>
-        <div id="enquiryItems" class="mt-3"></div>
+        <div id="enquiryItems" class="mt-2"></div>
       </div>
 
-      <form id="enquiryForm" novalidate class="mt-7 grid gap-5 sm:grid-cols-2 [&>*]:min-w-0">
+      <form id="enquiryForm" novalidate class="mt-5 grid gap-4 sm:grid-cols-2 [&>*]:min-w-0">
         <div>
           <label for="fName" class="mb-1.5 block text-sm font-semibold text-ink dark:text-cream">Customer Name *</label>
           <input id="fName" name="name" type="text" autocomplete="name" placeholder="Your full name" class="w-full rounded-xl border border-line bg-cream px-4 py-3 text-sm text-ink placeholder:text-stone-400 transition focus:border-clay focus:outline-none focus:ring-4 focus:ring-clay/15 dark:border-white/10 dark:bg-night dark:text-cream">
@@ -280,7 +280,7 @@ tailwind.config = {
           <label for="fRequest" class="mb-1.5 block text-sm font-semibold text-ink dark:text-cream">Special Request</label>
           <textarea id="fRequest" name="request" rows="4" placeholder="Allergies, high chair, birthday candle, takeaway order notes…" class="w-full resize-y rounded-xl border border-line bg-cream px-4 py-3 text-sm text-ink placeholder:text-stone-400 transition focus:border-clay focus:outline-none focus:ring-4 focus:ring-clay/15 dark:border-white/10 dark:bg-night dark:text-cream"></textarea>
         </div>
-        <div class="sm:col-span-2 flex flex-col gap-4 border-t border-line pt-5 dark:border-white/10 sm:flex-row sm:items-center sm:justify-between">
+        <div class="sm:col-span-2 flex flex-col gap-3 border-t border-line pt-4 dark:border-white/10 sm:flex-row sm:items-center sm:justify-between">
           <p class="text-xs leading-relaxed text-stone-500 dark:text-stone-400">Your enquiry is saved on this device only — no data leaves your browser.</p>
           <button type="submit" class="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-clay px-7 py-3.5 text-sm font-bold text-white shadow-soft transition hover:bg-clayd">
             Submit Enquiry <i data-lucide="send" class="h-4 w-4"></i>

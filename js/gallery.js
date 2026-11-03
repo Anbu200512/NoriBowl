@@ -15,26 +15,25 @@
     { src: 'assets/images/menu-veg-2.jpg', cat: 'bowls', alt: 'Vegetarian ramen with mushrooms and greens', h: 'h-56 sm:h-72' },
     { src: 'assets/images/menu-dry-1.jpg', cat: 'bowls', alt: 'Mazesoba dry noodles tossed with tare', h: 'h-48 sm:h-64' },
     { src: 'assets/images/home-feature-1.jpg', cat: 'bowls', alt: 'Signature bowl photographed from above', h: 'h-56 sm:h-64' },
-    { src: 'assets/images/home2-sig-1.jpg', cat: 'bowls', alt: 'House special ramen with thick-cut pork', h: 'h-48 sm:h-72' },
+    { src: 'assets/images/menu-shoyu-1.jpg', cat: 'bowls', alt: 'Shoyu ramen with chashu and nori', h: 'h-48 sm:h-72' },
     /* Kitchen */
     { src: 'assets/images/home-broth-1.jpg', cat: 'kitchen', alt: 'Broth rolling in the stockpot at dawn', h: 'h-56 sm:h-72' },
     { src: 'assets/images/story-broth.jpg', cat: 'kitchen', alt: 'Stock simmering through the afternoon', h: 'h-48 sm:h-64' },
     { src: 'assets/images/story-noodles.jpg', cat: 'kitchen', alt: 'Fresh noodles cut and floured on the bench', h: 'h-56 sm:h-64' },
     { src: 'assets/images/story-ingredients.jpg', cat: 'kitchen', alt: 'Prepped ingredients lined up before service', h: 'h-48 sm:h-72' },
-    { src: 'assets/images/home2-broth.jpg', cat: 'kitchen', alt: 'Ladle lifting broth from the pot', h: 'h-56 sm:h-72' },
+    { src: 'assets/images/home-broth-2.jpg', cat: 'kitchen', alt: 'Clear shoyu broth with chashu', h: 'h-56 sm:h-72' },
     /* Room */
     { src: 'assets/images/home-atmosphere.jpg', cat: 'room', alt: 'The counter and open kitchen at NoriBowl', h: 'h-48 sm:h-64' },
-    { src: 'assets/images/home2-atmosphere.jpg', cat: 'room', alt: 'Dining room glowing before the evening rush', h: 'h-56 sm:h-72' },
+    { src: 'assets/images/home-location.jpg', cat: 'room', alt: 'Lantern sign glowing above the entrance at night', h: 'h-56 sm:h-72' },
     { src: 'assets/images/story-gallery-1.jpg', cat: 'room', alt: 'Decorated dining corner of the ramen house', h: 'h-56 sm:h-64' },
-    { src: 'assets/images/story-gallery-3.jpg', cat: 'room', alt: 'Guests seated in the main dining area', h: 'h-48 sm:h-72' },
-    { src: 'assets/images/story-gallery-5.jpg', cat: 'room', alt: 'Table setting laid out before service', h: 'h-56 sm:h-72' },
+    { src: 'assets/images/story-origin.jpg', cat: 'room', alt: 'The original shopfront on Harbour Road', h: 'h-48 sm:h-72' },
     { src: 'assets/images/story-gallery-6.jpg', cat: 'room', alt: 'Lantern-lit street outside at night', h: 'h-48 sm:h-64' },
     { src: 'assets/images/contact-venue.jpg', cat: 'room', alt: 'Front of the restaurant on Harbour Road', h: 'h-56 sm:h-64' },
     /* People */
     { src: 'assets/images/story-chef-1.jpg', cat: 'people', alt: 'Kenji Nakamura, founder and head chef', h: 'h-56 sm:h-72' },
     { src: 'assets/images/story-chef-2.jpg', cat: 'people', alt: 'Daichi Ito, broth specialist, at the pot', h: 'h-48 sm:h-64' },
     { src: 'assets/images/story-chef-3.jpg', cat: 'people', alt: 'Haruto Aoki cutting the daily noodles', h: 'h-56 sm:h-64' },
-    { src: 'assets/images/home2-chef.jpg', cat: 'people', alt: 'A cook plating up during service', h: 'h-48 sm:h-72' }
+    { src: 'assets/images/story-gallery-4.jpg', cat: 'people', alt: 'Guests eating at the counter', h: 'h-48 sm:h-72' }
   ];
 
   var CATS = [
